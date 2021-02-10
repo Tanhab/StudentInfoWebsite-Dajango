@@ -1,0 +1,39 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>login </h1>
+    <form class="form-signin" method="post">{%  csrf_token %}
+    <div class="d-flex flex-column pb-3">
+{#        <img class="img-fluid " src="{% static 'L.jpg' %}" width="72px">#}
+
+    </div>
+        {% for field in login_form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}
+
+                {% if field.help_text %}
+                    <small> {{ field.help_text }}</small>
+                
+                {% endif %}
+
+             </p>
+
+        {% endfor %}
+        {% for field in login_form %}
+             {% for error in field.errors %}
+                    <span style="color: red;">{{ error }}</span>
+
+                {% endfor %}
+        {% endfor %}
+        {% if login_form.non_field_errors %}
+            <span style="color: red;">{{ login_form.non_field_errors }}</span>
+        {% endif %}
+
+
+    <button type="submit">log in</button>
+    </form>
+
+
+{% endblock content %}
