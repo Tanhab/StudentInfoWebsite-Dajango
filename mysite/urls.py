@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from homepage.views import home_screen_view
 from account.views import (
-    registration_view,logout_view,login_view,account_view,must_authenticate_view
+    registration_view, logout_view, login_view, account_view, must_authenticate_view
 )
 
 urlpatterns = [
@@ -31,3 +31,6 @@ urlpatterns = [
     path('account/', account_view, name='account'),
     path('must_authenticate/', must_authenticate_view, name='must_authenticate'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

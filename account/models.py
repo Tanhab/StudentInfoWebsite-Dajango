@@ -43,6 +43,12 @@ class MyAccountManager(BaseUserManager):
         return user
 
 
+def upload_location(instance, filename):
+    file_path = 'account/{author_id}/profile_pic_{filename}'.format(
+        author_id=str(instance.username), filename=filename)
+    return file_path
+
+
 class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, )
     username = models.CharField(max_length=30, unique=True)
@@ -53,7 +59,7 @@ class Account(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     reg_num = models.IntegerField(verbose_name='Registration number', unique=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to=upload_location, null=True, blank=True)
     phone_number = models.IntegerField(null=True, blank=True)
     address = models.TextField(max_length=100, null=True, blank=True)
     blood_group = models.CharField(max_length=3, choices=blood_group_options, null=True, blank=True)

@@ -7,37 +7,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <style type="text/css">
-        .search-bar{
-            max-width: 500px;
-            width: 100%;
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    {% block style %}
 
+    {% endblock style %}
+    <style>
+        body{
+            background-color: #212529;
+            color: white;
         }
     </style>
-    <title>Title</title>
+    <title>Sust Cse 18</title>
 </head>
 <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        {% if request.user.is_authenticated %}
-              <h5 class="my-0 mr-md-auto font-weight-normal">Hello! {{ request.user.username }}</h5>
-            <div class="search-bar mt-sm-2 mr-2 ">
-                <form method="get">
-                    <input type="text" class="form_control" name="q" id="id_q" placeholder="search..">
-                </form>
-            </div>
-                <nav class="my-2 my-md-0 mr-md-3">
-
-                <a class="p-2 text-dark" href="{% url 'home' %}">home</a>
-                <a class="p-2 text-dark" href="{% url 'account' %}" >Account</a>
-                </nav>
-                <a class="btn btn-outline-primary p-2" href="{% url 'logout' %}" >Logout</a>
-            {% else %}
-                  <a class="btn btn-outline-primary p-2 " href="{% url 'login' %}" >Login</a>
-                  <a class="btn btn-outline-primary p-2" href="{% url 'register' %}" >Register</a>
-        {% endif %}
-    </div>
-
-
     {% block content %}
 
     {% endblock content %}
