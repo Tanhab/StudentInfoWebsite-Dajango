@@ -1,0 +1,134 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% include 'snippets/header.html'%}
+    <style type="text/css">
+        body{
+            color: black;
+            background: url('{% static 'floorf.jpg' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .list-group-item{
+            /* background-color: skyblue; */
+            border:   solid blue 1px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+       
+        .list-group{
+            margin-top: 150px;
+        }
+        .card{
+            border-radius: 10px;
+        }
+        .profile-image-small{
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            overflow: hidden;;
+        }
+        .profile-image-large{
+            
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            overflow: hidden;;
+        }
+
+    </style>
+    <div class="container">
+        <ul class="list-group p-0">
+            {% for account in accounts %}
+               <li class="list-group-item p-0 m-1">
+                <div class="accordion" id="parent{{ account.reg_num|slugify }}" >
+                <div class="card  text-primary m-0 p-0">
+                    <div class="card-header" id="heading{{ account.reg_num|slugify }}" >
+                        <div class="row align-items-center">
+                            <div class="col-3 pl-4  ">
+                                {% if account.image %}
+                                    <img src="{{ account.image.url }}" alt="profile image" class="profile-image-small">
+                                    {% else %}
+                                    <i class="fas fa-5x fa-user-circle "></i>
+                                {% endif %}
+
+                            </div>
+                            <div class="col-4 mr-auto p-0  m-0">
+                                <p class="h5 font-weight-bold ">{{ account.reg_num }}</p>
+                            </div>
+                            <div class="col-3 mr-auto p-0 m-0">
+                                <p class="h5 font-weight-bold ">{{ account.username|slugify }}</p>
+                            </div>
+                            <div class="col-2 col-xs-2  ml-auto p-0">
+                            <h6 class="mb-0 p-0 ">
+
+                                <!-- <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">details</a> -->
+                                <button class="btn btn-link btn-primary  text-center text-white" type="button" data-toggle="collapse" data-target="#one{{ account.reg_num|slugify }}"
+                                    aria-expanded="true" aria-controls="parent{{ account.reg_num|slugify }}">
+                                    details
+                                </button>
+                            </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="one{{ account.reg_num|slugify }}" class="collapse " aria-labelledby="heading{{ account.reg_num|slugify }}" data-parent="#parent{{ account.reg_num|slugify }}">
+                        <div class="container">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-10 m-2 ">
+                                    <div class="row z-depth-3">
+                                        <div class="col-sm-4 bg-info rounded-left">
+                                            <div class="card-block text-center text-white">
+                                                {% if account.image %}
+                                                    <img src="{{ account.image.url }}" alt="profile image" class="profile-image-large mt-5">
+                                                {% else %}
+                                                    <i class="fas fa-user-tie fa-7x mt-5"></i>
+                                                {% endif %}
+                                                <h2 class="font-weight-bold mt-4">{{ account.username }}</h2>
+                                                <p>{{ account.reg_num }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8 bg-white rounded-right">
+                                            <h3 class="mt-3 text-center">Information</h3>
+                                            <hr class="bg-primary mt-0 w-25">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Email:</p>
+                                                    <h6 class=" text-muted">{{ account.email }}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Phone:</p>
+                                                    <h6 class="text-muted">{{ account.phone_number }}</h6>
+                                                </div>
+                                            </div>
+                                            <hr class="bg-primary">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Blood group:</p>
+                                                    <h6 class="text-muted">{{ account.blood_group }}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Address</p>
+                                                    <h6 class="text-muted">{{ account.address }}</h6>
+                                                </div>
+                                            </div>
+                                            <hr class="bg-primary">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+{% endblock content %}
