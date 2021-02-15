@@ -23,19 +23,18 @@
 
     }
     #home-section {
-  {#background: url('{% static 'floor_dark.jpg' %}');#}
-  {#background-repeat: no-repeat;#}
-  {#background-attachment: fixed;#}
         background-size: cover;
-  min-height: 622px;
+        width: 100%;
+        min-height: 622px;
 }
 
 #home-section .dark-overlay {
   position: absolute;
   top: 0;
   left: 0;
+    right:0;
   width: 100%;
-  min-height: 622px;
+  min-height: 750px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -81,7 +80,7 @@
 </style>
 
     <header id="home-section" >
-        <img src="{%  static 'floor_dark.jpg' %}" alt="">
+        <img src="{%  static 'floor_dark.jpg' %}" alt=""style="width:100%">
         <div class="dark-overlay">
             <div class="home-inner container">
                 <div class="row">
@@ -119,7 +118,7 @@
     </header>
     <div class="container second" >
         <p class="h2 text-white text-center p-2">  We started our journey at January 19, 2019<br></p>
-        <p class=" h3 text-white text-center  mx-auto p-2 " >Today we 107 souls stand together in this Cse Family</p>
+        <p class=" h3 text-white text-center  mx-auto p-2 " >Today we 107 souls stand together in this CSE Family</p>
 
     </div>
     <!-- carousel -->
