@@ -1,0 +1,235 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% include 'snippets/header.html' %}
+    <style type="text/css">
+        body{
+            color: black;
+            background: url('{% static 'floor_dark.jpg' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .first{
+            margin-top:150px;
+            background: rgb(2,0,36);
+            border-radius: 20px;
+            background: linear-gradient(90deg, rgba(2,0,36,.6) 0%, rgba(9,9,121,.6) 0%, rgba(204,249,255,.6) 0%);
+        }
+        .profile-image-large{
+
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            overflow: hidden;;
+        }
+
+
+    </style>
+
+
+    <div class="container first " style="border: solid 3px blue">
+        {# best-academic#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best Academics</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'kausar.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>kausar Hossain </b></h4>
+                            <h5 class="text-primary">Current CGPA - 3.94</h5>
+                            <p class="card-text">"আমার প্রিয় স্যার মাসুম স্যার।ওনার মত কোড কেউ লিখতে পারে না। আমার সাফল্যের পিছনে উনার অবদান সবচেয়ে বেশি"</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# best-Coder#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best Coder</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'rony.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Saikat Hossain Rony</b></h4>
+                            <h5 class="text-primary">CF Max Rating: <span style="color: yellow">Master</span></h5>
+                            <p class="card-text">"আমার জোক্স শুধু অভিষেক ভাই আর কিরিটী ভাই বুঝে"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# best-UI#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best UI/UX Designer</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'dristy.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Ananna Datta Dristy </b></h4>
+                            <h5 class="text-primary"><a href="https://dribbble.com/AnannaDristy" target="_blank">
+                                Visit her Dribble page
+                            </a> </h5>
+                            <p class="card-text">"Efficient, fast , bugfree , user-friendly এইগুলা পরে, সবার আগে অ্যাপটা cute হইতে হবে"  </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# best-developer#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best Developer</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'antar.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Team  OneZeroNoobs</b></h4>
+                            <h5 class="text-primary">Antar Roy & Sagor</h5>
+                            <p class="card-text">Admin apologizes as this website is not enough to mention their technical abilities.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# best-sportsman#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best Sportsman</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'shanto.JPG'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Hasibur Rahman Shanto</b></h5>
+                            <h5 class="text-primary">Intra Department Badminton Champion</h5>
+                            <p class="card-text">"কেউ ইনাম স্যারের ক্লাসে খেলে, আর কেউ মাঠে "</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Best Indoor Gamer#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Best Indoor Player aka playboy</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'IMG_20210115_133630.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Muhit mahmud</b></h4>
+                            <h5 class="text-primary">LUDU-(runners up) Inta CSE Depatment Indoor Games</h5>
+                            <p class="card-text">"লুডু খুবি কঠিন একটা খেলা। এর জন্য অনেক algorithm জানা লাগে। এর complexity এতো বেশি
+                            যে NETFLIX এটা নিয়ে tutorial movie বানাইছে। inbox me for link আর chittagong এর মেয়ে হইলে আমি গিয়ে শিখাই আসব "</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Logest CR#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Longest CR</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'sohan.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Moksedur Rahman Sohan</b></h4>
+                            <p class="card-text">Life is a hunting ground with only one Shikhari </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Longest EM#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Longest EM</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'aisha.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Aisha Haider Chowdhury</b></h5>
+                            <p class="card-text"><a target="_blank" href="https://www.babbel.com/en/magazine/most-difficult-word-to-pronounce">
+                                Aisha's speech
+                            </a> </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Team Achievement#}
+        <div class="d-flex p-3">
+            <p class="h2 text-center text-black mx-auto"><b>Team Achievements</b></p>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'walle.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Team Wall-E</b></h4>
+                            <h5 class="text-primary">ROBOSUST LFR - Champion</h5>
+                            <h6 class="text-primary">MAHIN,Dristy,Preity and Tanhab</h6>
+                            <p class="card-text">একটি বৃত্তি না পাওয়া GOLDEN BOY আর ৩ জন বৃত্তি পাওয়া মানুষের গল্প </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center align-item-center">
+            <div class="card mb-3 p-4 col-sm-8 mx-auto" style="max-width: 800px;">
+                <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <img class=" profile-image-large" src="{% static 'trinity.jpg'%}" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Trio of temerity</b></h4>
+                            <h5 class="text-primary">Finalist in HULT-2021</h5>
+                            <h5 class="text-primary">Aisha,Tondra and Kongka</h5>
+                            <p class="card-text">Ladies Gang. Be Careful</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+{% endblock content%}

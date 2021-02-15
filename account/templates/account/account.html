@@ -65,7 +65,7 @@
 <style type="text/css">
     body{
             color: black;
-            background: url('{% static 'floorf.jpg' %}');
+            background: url('{% static 'floor_dark.jpg' %}');
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -112,11 +112,11 @@
     }
 </style>
     <div class="row   mx-auto  justify-content-center" style="padding-top: 150px;">
-     <div class=" col-8 col-lg-5  d-flex flex-column pb-3">
+     <div class=" col-10 col-lg-5  d-flex flex-column pb-3">
         <div class="card bg-primary text-center card-form">
             <div class="card-body">
-                <h3>Register</h3>
-                <p>Please fill out this form to register</p>
+                <h3>Edit your account</h3>
+                <p>Please fill out the categories you want to change</p>
                 <form class="create-form form-signin" method="post" enctype="multipart/form-data">{% csrf_token %}
                     <label for="inputUsername"></label><input type="text" name="username" id="inputUsername" class="form-control m-2"
                                                               placeholder="Username" value="{{ account_form.initial.username }}" autofocus>
@@ -164,7 +164,7 @@
                         </div>
 
                     {% endif %}
-                    <input type="submit" value="Submit" class="btn btn-outline-light btn-block m-2">
+                    <input type="submit" value="Submit Changes"  class="btn btn-outline-light btn-block m-2 mt-4">
                 </form>
             </div>
         </div>

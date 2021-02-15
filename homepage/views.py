@@ -12,3 +12,10 @@ def home_screen_view(request):
     account_list = Account.objects.all();
     context['accounts'] = account_list
     return render(request, "homepage/index.html", context)
+
+
+def hall_of_fame_view(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    context={}
+    return render(request,"homepage/hall_of_fame.html",context)

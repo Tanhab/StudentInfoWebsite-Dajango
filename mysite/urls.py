@@ -17,19 +17,25 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from homepage.views import home_screen_view
+from homepage.views import (
+    home_screen_view, hall_of_fame_view
+)
 from account.views import (
     registration_view, logout_view, login_view, account_view, must_authenticate_view
 )
+from blog.views import blog_screen_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_screen_view, name='home'),
+    path('halloffame/', hall_of_fame_view, name='hall_of_fame'),
     path('register/', registration_view, name='register'),
     path('logout/', logout_view, name='logout'),
     path('login/', login_view, name='login'),
     path('account/', account_view, name='account'),
+    path('blogpage',blog_screen_view,name='blogpage'),
     path('must_authenticate/', must_authenticate_view, name='must_authenticate'),
+    path('blog/', include('blog.urls', 'blog')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

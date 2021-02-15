@@ -67,7 +67,7 @@
 <style type="text/css">
     body{
             color: black;
-            background: url('{% static 'floorf.jpg' %}');
+            background: url('{% static 'floor_dark.jpg' %}');
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -120,7 +120,7 @@
                 <p>Please fill out this form to register</p>
                 <form class="create-form form-signin" method="post" enctype="multipart/form-data">{% csrf_token %}
                     <label for="inputUsername"></label><input type="text" name="username" id="inputUsername" class="form-control m-2"
-                                                              placeholder="Username" value="{{ account_form.initial.username }}" required autofocus>
+                                                              placeholder="Username" value="{{ account_form.initial.username }}" required >
                     <label for="inputRegNUm"></label><input type="number" name="reg_num" id="inputRegNUm" class="form-control m-2"
                                                             placeholder="Registration number" value="{{ account_form.initial.reg_num }}" required >
                     <label for="inputPassword1"></label><input type="password" name="password1" id="inputPassword1" class="form-control m-2" placeholder="Password" required>

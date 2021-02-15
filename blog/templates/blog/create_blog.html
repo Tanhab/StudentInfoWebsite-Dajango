@@ -1,0 +1,67 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<style type="text/css">
+    body{
+            color: black;
+            background: url('{% static 'floor_dark.jpg' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+  .create-form {
+	    width: 100%;
+	    max-width: 100%;
+	    padding: 15px;
+	    margin: auto;
+  	}
+
+  	.submit-button{
+  		max-width: 200px;
+  	}
+</style>
+    {% include 'snippets/header.html' %}
+    <div class="container">
+        <div class="row "style="margin-top: 150px">
+        </div>
+    </div>
+
+<div class="container ">
+	<div class="row">
+		<div class="col-lg-7 offset-lg-1 bg-primary mx-auto">
+            <h2 class="p-2  text-center"> Create your post</h2>
+			<form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+				<!-- title -->
+				<div class="form-group">
+					<label for="id_title">Title</label>
+					<input class="form-control" type="text" name="title" id="id_title" placeholder="Title" required autofocus>
+				</div>
+
+				<!-- Body -->
+				<div class="form-group">
+					<label for="id_body">Content</label>
+					<textarea class="form-control" rows="10" type="text" name="body" id="id_body" placeholder="This blog is about..." required></textarea>
+				</div>
+
+				<!-- Image -->
+				<div class="form-group">
+					<label for="id_image">Image</label>
+					<input  type="file" name="image" id="id_image" accept="image/*" required>
+				</div>
+
+				<!-- Submit btn -->
+				<button class="submit-button btn btn-outline-light btn-primary btn-block" type="submit">POST</button>
+			</form>	
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock content %}

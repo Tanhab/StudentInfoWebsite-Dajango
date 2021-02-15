@@ -16,10 +16,10 @@
                 {% if request.user.is_authenticated %}
                    <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Blogs</a>
+                        <a href="{% url 'blogpage' %}" class="nav-link text-white">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#explore-head-section" class="nav-link text-white">Hall of Fame</a>
+                        <a href="{% url 'hall_of_fame' %}" class="nav-link text-white">Hall of Fame</a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'account' %}" class="nav-link text-white">Account</a>

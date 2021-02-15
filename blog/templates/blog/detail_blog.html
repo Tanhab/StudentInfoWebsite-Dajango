@@ -1,0 +1,51 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<style type="text/css">
+    body{
+            color: black;
+            background: url('{% static 'floor_dark.jpg' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+	.card{
+		max-width: 700px;
+	}
+	.card-body{
+		padding: 20px;
+	}
+</style>
+{% include 'snippets/header.html' %}
+    <div class="container">
+        <div class="row "style="margin-top: 100px"></div>
+    </div>
+<div class="container">
+	<div class="row">
+
+
+		<!-- Blog Post -->
+		<div class="card m-auto p-2">
+
+			<img class="card-img-top" src="{{blog_post.image.url}}">
+			<div class="card-body mt-2 mb-2">
+			  <h2 class="card-title">{{blog_post.title}}</h2>
+			  <p class="card-text">{{blog_post.body}}</p>
+			  {% if blog_post.author == request.user %}
+			  	<a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-primary">Update</a>
+			  {% endif %}
+			</div>
+			<div class="card-footer text-muted">
+			  Updated on {{blog_post.date_updated}} by {{blog_post.author}}
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+{% endblock content %}

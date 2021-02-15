@@ -23,10 +23,10 @@
 
     }
     #home-section {
-  background: url('{% static 'floorf.jpg' %}');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  {#background: url('{% static 'floor_dark.jpg' %}');#}
+  {#background-repeat: no-repeat;#}
+  {#background-attachment: fixed;#}
+        background-size: cover;
   min-height: 622px;
 }
 
@@ -59,16 +59,29 @@
      border:1px solid red;
      box-sizing: border-box;
 }
+@media screen and (min-width: 1000px) {
+  .second{
+    position: relative;
+    width:100%;
+    height:200px;
+    top: 20px;
+    box-sizing: border-box;
+}
+}
+@media screen and (max-width:1000px) {
 .second{
     position: relative;
     width:100%;
     height:200px;
-    top: 300px;
+    top: 200px;
     box-sizing: border-box;
 }
+}
+
 </style>
 
     <header id="home-section" >
+        <img src="{%  static 'floor_dark.jpg' %}" alt="">
         <div class="dark-overlay">
             <div class="home-inner container">
                 <div class="row">
@@ -104,24 +117,39 @@
             </div>
         </div>
     </header>
+    <div class="container second" >
+        <p class="h2 text-white text-center p-2">  We started our journey at January 19, 2019<br></p>
+        <p class=" h3 text-white text-center  mx-auto p-2 " >Today we 107 souls stand together in this Cse Family</p>
+
+    </div>
     <!-- carousel -->
-    <div class="container pt-4 second ">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner  " style="border: solid 3px black">
+    <div class="container second ">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
+{#            <ol class="carousel-indicators">#}
+{#                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
+{#                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
+{#                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
+{#            </ol>#}
+            <div class="carousel-inner  mb-4" style="border: solid 3px black">
                 <div class="carousel-item active">
+                    <img src="{% static 'batch5f.jpg' %}" class="d-block  img-fluid " alt="batch photo 1">
+                </div>
+                <div class="carousel-item ">
                     <img src="{% static 'batch1f.jpg' %}" class="d-block  img-fluid " alt="batch photo 1">
                 </div>
                 <div class="carousel-item">
                     <img src="{% static 'batch2f.jpg' %}" class="d-block  img-fluid" alt="batch photo 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'floorf.jpg' %}" class="d-block  img-fluid" alt="floor photo">
+                    <img src="{% static 'batch3f.jpg' %}" class="d-block  img-fluid" alt="floor photo">
                 </div>
+                <div class="carousel-item">
+                    <img src="{% static 'batch4f.jpg' %}" class="d-block  img-fluid" alt="floor photo">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'batch6f.jpg' %}" class="d-block  img-fluid" alt="floor photo">
+                </div>
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -133,8 +161,5 @@
             </a>
         </div>
     </div>
-
-
-
 
 {% endblock content%}
