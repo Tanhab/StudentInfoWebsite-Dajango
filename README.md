@@ -1,6 +1,6 @@
 This is a Website where information of students of a batch can be shown. Also there is a blog section where thay can share their stories with pictures.
 Visit the website-
-[tanhab.tech](tanhab.tech)
+https://tanhab.tech/
 
 This is built with-
   * backend - Django
