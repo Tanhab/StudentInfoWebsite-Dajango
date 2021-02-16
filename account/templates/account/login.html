@@ -68,13 +68,25 @@
 }
 }
 @media screen and (max-width:1000px) {
+    .second {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        top: 200px;
+        box-sizing: border-box;
+    }
+}
+@media screen and (max-width:400px) {
 .second{
     position: relative;
     width:100%;
     height:200px;
-    top: 200px;
-    box-sizing: border-box;
+    top: 400px;
+
 }
+    .txt{
+        font-size: 1rem;
+    }
 }
 
 </style>
@@ -107,6 +119,19 @@
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control" placeholder="Password" required>
                                     </div>
+                                        <p>Don't have an account?<a class="text-white" href="{% url 'register' %}">Register</a> </p>
+                                    {% for field in login_form %}
+                                              <p>
+                                                {% for error in field.errors %}
+                                                  <p style="color: red">Invalid Username or Password</p>
+                                                {% endfor %}
+                                              </p>
+                                    {% endfor %}
+                                          {% if login_form.non_field_errors %}
+                                            <div style="color: red">
+                                              <p>Invalid Username or Password</p>
+                                            </div>
+                                          {% endif %}
                                     <input type="submit" value="Submit" class="btn btn-outline-light btn-block">
                                 </form>
                             </div>
@@ -116,20 +141,21 @@
             </div>
         </div>
     </header>
-    <div class="container second" >
-        <p class="h2 text-white text-center p-2">  We started our journey at January 19, 2019<br></p>
-        <p class=" h3 text-white text-center  mx-auto p-2 " >Today we 107 souls stand together in this CSE Family</p>
-
-    </div>
+{#    <div class="container second second-text" >#}
+{#        #}
+{#    </div>#}
     <!-- carousel -->
     <div class="container second ">
+        <p class="h2 text-white text-center p-2 txt">  We started our journey at January 19, 2019<br></p>
+        <p class=" h3 text-white text-center  mx-auto p-2   txt" >Today we 107 souls stand together in this CSE Family</p>
+
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
 {#            <ol class="carousel-indicators">#}
 {#                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
 {#                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
 {#                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
 {#            </ol>#}
-            <div class="carousel-inner  mb-4" style="border: solid 3px black">
+            <div class="carousel-inner  " style="border: solid 3px black;margin-top: 20px">
                 <div class="carousel-item active">
                     <img src="{% static 'batch5f.jpg' %}" class="d-block  img-fluid " alt="batch photo 1">
                 </div>

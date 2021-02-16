@@ -52,8 +52,8 @@
                 <div class="accordion" id="parent{{ account.reg_num|slugify }}" >
                 <div class="card  text-primary m-0 p-0">
                     <div class="card-header" id="heading{{ account.reg_num|slugify }}" >
-                        <div class="row align-items-center">
-                            <div class="col-3 pl-4  ">
+                        <div class="row align-items-center justify-content-end">
+                            <div class="col ">
                                 {% if account.image %}
                                     <img src="{{ account.image.url }}" alt="profile image" class="profile-image-small">
                                     {% else %}
@@ -61,21 +61,18 @@
                                 {% endif %}
 
                             </div>
-                            <div class="col-4 mr-auto p-0  m-0">
+                            <div class="col ">
                                 <p class="h5 font-weight-bold ">{{ account.reg_num }}</p>
                             </div>
-                            <div class="col-3 mr-auto p-0 m-0">
+                            <div class="col ">
                                 <p class="h5 font-weight-bold ">{{ account.username|slugify }}</p>
                             </div>
-                            <div class="col-2 col-xs-2  ml-auto p-0">
-                            <h6 class="mb-0 p-0 ">
-
-                                <!-- <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">details</a> -->
-                                <button class="btn btn-link btn-primary  text-center text-white" type="button" data-toggle="collapse" data-target="#one{{ account.reg_num|slugify }}"
+                            <div class="col  mt-1" >
+                               <!-- <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">details</a> -->
+                                <button class="btn btn-link btn-primary  text-center text-white "type="button" data-toggle="collapse" data-target="#one{{ account.reg_num|slugify }}"
                                     aria-expanded="true" aria-controls="parent{{ account.reg_num|slugify }}">
                                     details
                                 </button>
-                            </h6>
                             </div>
                         </div>
                     </div>
